@@ -47,7 +47,7 @@ public class LibraryApp {
                 System.out.print("Enter your name: ");
                 String name = scanner.nextLine().trim();
                 b.checkOut(name);
-                System.out.println("You checked out \"" + b.getTitle() + "\". Return it on time, otherwise I'll get mad.");
+                System.out.println("You checked out \"" + b.getTitle() + "\". Return it on time, if you don't I will kind you and I will get my book back.");
             }
         } finally {
 
