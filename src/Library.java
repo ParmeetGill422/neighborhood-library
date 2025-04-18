@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 //Manages the inventory of books.
 public class Library {
     private Book[] inventory;
@@ -8,7 +6,6 @@ public class Library {
         inventory = new Book[20];
         initializeInventory();
     }
-
     // Populate with 20 sample books.
     private void initializeInventory() {
         for (int i = 0; i < inventory.length; i++) {
@@ -19,7 +16,6 @@ public class Library {
             );
         }
     }
-
     //Display all books not currently checked out.
     public void showAvailableBooks() {
         System.out.println("\nAvailable Books:");
@@ -31,7 +27,6 @@ public class Library {
             }
         }
     }
-
     //Display all books that are checked out, with who has them.
     public void showCheckedOutBooks() {
         System.out.println("\nChecked‑Out Books:");
@@ -45,7 +40,6 @@ public class Library {
             }
         }
     }
-
     public Book getBookById(int id) {
         if (id < 1 || id > inventory.length) return null;
         return inventory[id - 1];

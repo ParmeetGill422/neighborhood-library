@@ -13,7 +13,6 @@ public class Book {
         this.isCheckedOut = false;
         this.checkedOutTo = "";
     }
-
     // Getters and setters
     int getId(){ return id; }
     String getIsbn(){ return isbn; }
@@ -28,8 +27,7 @@ public class Book {
         this.isCheckedOut   = true;
         this.checkedOutTo   = name;
     }
-
-     //Marks this book as returned.
+    //Marks this book as returned.
     public void checkIn() {
         this.isCheckedOut   = false;
         this.checkedOutTo   = "";

@@ -18,15 +18,13 @@ public class LibraryApp {
                     break;
                 case "X": // Exit
                     running = false;
-                    System.out.println("Goodbye!\nHope to never see you again");
+                    System.out.println("Goodbye!\nHope to never see you again!!.");
                     break;
                 default:
                     System.out.println("Invalid choice. Try again.");
             }
         }
-        scanner.close();
     }
-
     private static void showHomeMenu() {
         System.out.println("\n=== Neighborhood Library ===");
         System.out.println("1) Show Available Books");
@@ -34,7 +32,6 @@ public class LibraryApp {
         System.out.println("X) Exit");
         System.out.print("Select an option: ");
     }
-
     private static void handleShowAvailable() {
         library.showAvailableBooks();
         System.out.print("\nEnter Book ID to check out or X to return: ");
@@ -45,18 +42,17 @@ public class LibraryApp {
             int id = Integer.parseInt(input);
             Book b = library.getBookById(id);
             if (b == null || b.isCheckedOut()) {
-                System.out.println("Invalid ID or already checked out.");
+                System.out.println("That book is already checked out, try another one.");
             } else {
                 System.out.print("Enter your name: ");
                 String name = scanner.nextLine().trim();
                 b.checkOut(name);
-                System.out.println("You checked out \"" + b.getTitle() + "\". Enjoy!");
+                System.out.println("You checked out \"" + b.getTitle() + "\". Return it on time, otherwise I'll get mad.");
             }
         } finally {
 
         }
     }
-
     private static void handleShowCheckedOut() {
         library.showCheckedOutBooks();
         System.out.print("\nC) Check In a book  X) Return: ");
@@ -68,10 +64,10 @@ public class LibraryApp {
             int id = Integer.parseInt(scanner.nextLine());
             Book b = library.getBookById(id);
             if (b == null || !b.isCheckedOut()) {
-                System.out.println("Invalid ID or that book is not checked out.");
+                System.out.println("You are inputting a invalid book ID or trying to check in a book that is not checked out.");
             } else {
                 b.checkIn();
-                System.out.println("Book \"" + b.getTitle() + "\" has been returned. Thank you!");
+                System.out.println("Book \"" + b.getTitle() + "\" has been returned. Good job on returning it on time.");
             }
         } finally {
 
